@@ -5,8 +5,8 @@ from smtplib import SMTP
 import sys
 
 mensaje = MIMEMultipart("plain")
-mensaje["From"] = "huaritex@gmail.com"
-mensaje["To"] = "Brandonykevin07@gmail.com"
+mensaje["From"] = "correo_principal"
+mensaje["To"] = "correo_donde_llegara"
 mensaje["Subject"] = "Correo de prueba"
 
 adjunto = MIMEBase("application", "octet-stream")
@@ -16,8 +16,8 @@ mensaje.attach(adjunto)
 
 server = SMTP("smtp.gmail.com", 587)
 server.starttls()
-server.login("huaritex@gmail.com", "dhwq qdtm tfzr rygm")
-server.sendmail( "huaritex@gmail.com", "Brandonykevin07@gmail.com", mensaje.as_string().encode('utf-8'))
+server.login("correo_principal", "contraseña")
+server.sendmail( "correo_principal", "correo_donde_llegara", mensaje.as_string().encode('utf-8'))
 
 server.quit()
 
