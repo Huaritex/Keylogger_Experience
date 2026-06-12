@@ -1,0 +1,9 @@
+@echo off
+echo [(+)] Configurando entorno para la feria...
+python -m venv .venv
+echo [(+)] Activando entorno...
+call .venv\Scripts\activate.bat
+echo [(+)] Instalando librerias necesarias (pynput)...
+python -m pip install pynput
+echo [(+)] Todo listo. Ahora puedes ejecutar el keylogger con 'ejecutar.bat'
+pause

